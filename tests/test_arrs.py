@@ -1,8 +1,15 @@
+import pytest
+
 from utils import arrs
 
 
+@pytest.fixture
+def collection_get():
+    return [[[1, 2, 3], 1, "test"], [[], 0, "test"]]
+
+
 def test_get():
-    assert arrs.get([1, 2, 3], 1, "test") == 2
+    assert arrs.get([1, 2, 3], 1, "test") == [2, "test"]
     assert arrs.get([], 0, "test") == "test"
 
 
